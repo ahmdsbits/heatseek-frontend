@@ -1,0 +1,116 @@
+.leave-requests-page {
+    display: grid;
+    grid-gap: var(--s-l);
+    padding: var(--s-2xl);
+    justify-items: center;
+}
+
+.leave-requests-page>* {
+    width: clamp(900px, 1024px, 100%);
+}
+
+.leave-request-form {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: var(--s-xs);
+    grid-template-areas:
+        "message date"
+        "message submit";
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.message-input {
+    grid-area: message;
+    width: 100%;
+}
+
+.date-input {
+    grid-area: date;
+    align-self: start;
+    width: 100%;
+    height: 100%;
+}
+
+.submit-button {
+    width: 100%;
+    height: 100%;
+    grid-area: submit;
+    align-self: end;
+}
+
+.leave-request-form textarea {
+    width: 100%;
+    height: 100%;
+}
+
+.leave-requests-list {
+    display: grid;
+    grid-gap: var(--s-m);
+}
+
+.leave-request-card-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: var(--s-l);
+    height: 100%;
+}
+
+.leave-request-card-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: var(--s-s);
+    height: 100%;
+}
+
+.leave-request-card-content .status {
+    font-weight: bold;
+}
+
+.employee-name {
+    font-weight: bold;
+}
+
+.employee-id {
+    margin-bottom: var(--s-3xs);
+}
+
+.message {
+    font-style: italic;
+    color: var(--fg-light);
+}
+
+.response-message {
+    font-style: italic;
+    color: var(--fg-lighter);
+}
+
+.actions {
+    position: absolute;
+    top: var(--s-l);
+    right: var(--s-l);
+    display: flex;
+    gap: var(--s-s);
+}
+
+.actions button {
+    flex-grow: 1;
+    min-width: 100px;
+}
+
+.danger-button {
+    --primary-color: var(--pastel-red);
+    --primary-color-light: var(--light-pastel-red);
+}
+
+.error {
+    color: var(--pastel-red);
+}
+
+.normal {
+    font-style: normal;
+    color: var(--fg-d);
+}

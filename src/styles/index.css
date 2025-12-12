@@ -1,0 +1,416 @@
+@import url("./vars.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: var(--t-0);
+    background-color: var(--bg);
+    color: var(--fg);
+}
+
+h1 {
+    font-size: var(--t-5);
+    font-weight: bold;
+    line-height: 1;
+}
+
+h1.visual {
+    font-family: "Playfair Display";
+    font-style: italic;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: var(--t-4);
+    font-weight: bold;
+    line-height: 1;
+}
+
+h2.visual {
+    font-family: "Playfair Display";
+    font-style: italic;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: var(--t-3);
+    font-weight: bold;
+    line-height: 1;
+}
+
+h4 {
+    font-size: var(--t-4);
+    font-weight: bold;
+    line-height: 1;
+}
+
+h5 {
+    font-size: var(--t-5);
+    font-weight: bold;
+    line-height: 1;
+}
+
+h6 {
+    font-size: var(--t-6);
+    font-weight: bold;
+    line-height: 1;
+}
+
+p {
+    font-size: var(--t-0);
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.justify {
+    text-align: justify;
+}
+
+button {
+    border: none;
+    font-size: var(--t-0);
+    padding: var(--s-2xs) var(--s-xs);
+    box-shadow:
+        inset 0 0 0 0 var(--bg),
+        inset -2px 0 0 0 var(--bg),
+        inset 0 0 0 0 var(--bg),
+        inset 0 -2px 0 0 var(--bg),
+        4px 4px 0px -1.8px var(--fg);
+    transition:
+        box-shadow 500ms var(--ease-in-out),
+        background-color 500ms var(--ease-in-out),
+        color 500ms var(--ease-in-out);
+}
+
+button:focus {
+    outline: none;
+    text-decoration: none;
+    text-decoration-color: var(--fg);
+    text-underline-offset: 4px;
+}
+
+.primary-button {
+    color: var(--bg);
+    background-color: var(--accent);
+}
+
+.primary-button:focus {
+    box-shadow:
+        inset 0 0 0 0 var(--bg),
+        inset -2px 0 0 0 var(--bg),
+        inset 0 0 0 0 var(--bg),
+        inset 0 -2px 0 0 var(--bg),
+        4px 4px 0px -1.8px var(--fg),
+        4px 4px 32px -1.8px var(--accent);
+    text-decoration-color: var(--bg);
+}
+
+.primary-button:hover {
+    box-shadow:
+        inset 0 0 0 0 var(--bg),
+        inset -2px 0 0 0 var(--bg),
+        inset 0 0 0 0 var(--bg),
+        inset 0 -2px 0 0 var(--bg),
+        4px 4px 0px -1.8px var(--fg),
+        4px 4px 32px -1.8px var(--accent);
+}
+
+.primary-button:hover:focus {
+    text-decoration-color: var(--accent);
+}
+
+.primary-button:active:focus {
+    text-decoration-color: var(--fg);
+}
+
+.primary-button:active {
+    color: var(--fg);
+    background-color: var(--bg);
+    box-shadow:
+        inset 2px 0 0 0 var(--fg),
+        inset -2px 0 0 0 var(--fg),
+        inset 0 2px 0 0 var(--fg),
+        inset 0 -2px 0 0 var(--fg),
+        4px 4px 0px -1.8px var(--fg),
+        4px 4px 32px -1.8px var(--fg);
+}
+
+.secondary-button {
+    color: var(--fg);
+    background-color: var(--bg);
+    box-shadow:
+        inset 2px 0 0 0 var(--fg),
+        inset -2px 0 0 0 var(--fg),
+        inset 0 2px 0 0 var(--fg),
+        inset 0 -2px 0 0 var(--fg),
+        4px 4px 0px -1.8px var(--fg);
+}
+
+.secondary-button:hover {
+    color: var(--bg);
+    background-color: var(--fg);
+    box-shadow:
+        inset 0 0 0 0 var(--bg),
+        inset -2px 0 0 0 var(--bg),
+        inset 0 0 0 0 var(--bg),
+        inset 0 -2px 0 0 var(--bg),
+        4px 4px 0px -1.8px var(--fg),
+        4px 4px 32px -1.8px var(--fg);
+}
+
+.secondary-button:active {
+    color: var(--fg);
+    background-color: var(--bg);
+    box-shadow:
+        inset 2px 0 0 0 var(--fg),
+        inset -2px 0 0 0 var(--fg),
+        inset 0 2px 0 0 var(--fg),
+        inset 0 -2px 0 0 var(--fg),
+        4px 4px 0px -1.8px var(--fg),
+        4px 4px 32px -1.8px var(--fg);
+}
+
+.warning-button {
+    color: var(--bg);
+    background-color: var(--cream-yellow);
+}
+
+.warning-button:focus {
+    box-shadow:
+        inset 0 0 0 0 var(--bg),
+        inset -2px 0 0 0 var(--bg),
+        inset 0 0 0 0 var(--bg),
+        inset 0 -2px 0 0 var(--bg),
+        4px 4px 0px -1.8px var(--fg),
+        4px 4px 32px -1.8px var(--cream-yellow);
+    text-decoration-color: var(--bg);
+}
+
+.warning-button:hover {
+    box-shadow:
+        inset 0 0 0 0 var(--bg),
+        inset -2px 0 0 0 var(--bg),
+        inset 0 0 0 0 var(--bg),
+        inset 0 -2px 0 0 var(--bg),
+        4px 4px 0px -1.8px var(--fg),
+        4px 4px 32px -1.8px var(--cream-yellow);
+}
+
+.warning-button:hover:focus {
+    text-decoration-color: var(--cream-yellow);
+}
+
+.warning-button:active:focus {
+    text-decoration-color: var(--fg);
+}
+
+.warning-button:active {
+    color: var(--fg);
+    background-color: var(--bg);
+    box-shadow:
+        inset 2px 0 0 0 var(--fg),
+        inset -2px 0 0 0 var(--fg),
+        inset 0 2px 0 0 var(--fg),
+        inset 0 -2px 0 0 var(--fg),
+        4px 4px 0px -1.8px var(--fg),
+        4px 4px 32px -1.8px var(--fg);
+}
+
+.danger-button {
+    color: var(--bg);
+    background-color: var(--pastel-red);
+}
+
+.danger-button:focus {
+    box-shadow:
+        inset 0 0 0 0 var(--bg),
+        inset -2px 0 0 0 var(--bg),
+        inset 0 0 0 0 var(--bg),
+        inset 0 -2px 0 0 var(--bg),
+        4px 4px 0px -1.8px var(--fg),
+        4px 4px 32px -1.8px var(--pastel-red);
+    text-decoration-color: var(--bg);
+}
+
+.danger-button:hover {
+    box-shadow:
+        inset 0 0 0 0 var(--bg),
+        inset -2px 0 0 0 var(--bg),
+        inset 0 0 0 0 var(--bg),
+        inset 0 -2px 0 0 var(--bg),
+        4px 4px 0px -1.8px var(--fg),
+        4px 4px 32px -1.8px var(--pastel-red);
+}
+
+.danger-button:hover:focus {
+    text-decoration-color: var(--pastel-red);
+}
+
+.danger-button:active:focus {
+    text-decoration-color: var(--fg);
+}
+
+.danger-button:active {
+    color: var(--fg);
+    background-color: var(--bg);
+    box-shadow:
+        inset 2px 0 0 0 var(--fg),
+        inset -2px 0 0 0 var(--fg),
+        inset 0 2px 0 0 var(--fg),
+        inset 0 -2px 0 0 var(--fg),
+        4px 4px 0px -1.8px var(--fg),
+        4px 4px 32px -1.8px var(--fg);
+}
+
+input,
+textarea,
+select {
+    font-family: Inter;
+    font-size: var(--t-0);
+    background-color: var(--bg);
+    color: var(--fg);
+    color-scheme: dark;
+    border: none;
+    box-shadow:
+        inset 1px 0 0 0 var(--fg),
+        inset -1px 0 0 0 var(--fg),
+        inset 0 1px 0 0 var(--fg),
+        inset 0 -1px 0 0 var(--fg),
+        4px 4px 0px -1.8px var(--fg);
+    padding: var(--s-xs);
+    transition: box-shadow 500ms var(--ease-in-out);
+    z-index: 1;
+    resize: none;
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+    font-family: Inter;
+    font-size: var(--t-0);
+    color: var(--fg-l);
+}
+
+input:focus,
+textarea:focus select:focus {
+    outline: none;
+    box-shadow:
+        inset 2px 0 0 0 var(--fg),
+        inset -2px 0 0 0 var(--fg),
+        inset 0 2px 0 0 var(--fg),
+        inset 0 -2px 0 0 var(--fg),
+        4px 4px 0px -1.8px var(--fg);
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+    box-shadow:
+        inset 2px 0 0 0 var(--fg),
+        inset -2px 0 0 0 var(--fg),
+        inset 0 2px 0 0 var(--fg),
+        inset 0 -2px 0 0 var(--fg),
+        4px 4px 0px -1.8px var(--fg),
+        4px 4px 20px -10px var(--fg);
+}
+
+input:focus:hover,
+textarea:focus:hover {
+    box-shadow:
+        inset 2px 0 0 0 var(--fg),
+        inset -2px 0 0 0 var(--fg),
+        inset 0 2px 0 0 var(--fg),
+        inset 0 -2px 0 0 var(--fg),
+        4px 4px 0px -1.8px var(--fg);
+}
+
+.input-wrapper {
+    width: fit-content;
+    position: relative;
+}
+
+.input-wrapper>* {
+    width: 100%;
+}
+
+.input-wrapper::after {
+    content: "";
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+    transition: box-shadow 500ms var(--ease-in-out);
+}
+
+.input-wrapper:focus-within::after {
+    box-shadow:
+        4px 4px 32px -1.8px var(--fg);
+}
+
+table {
+    overflow-x: auto;
+    width: 100%;
+    text-align: center;
+    border: none;
+    border-collapse: collapse;
+}
+
+table th {
+    background-color: var(--fg-3xl);
+}
+
+table th,
+table td {
+    padding: var(--s-2xs);
+    border: solid 2px var(--fg-2xl);
+}
+
+a>button {
+    width: 100%;
+}
+
+.glow {
+    text-shadow: 0px 0px 80px var(--fg-d);
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.accented-glow {
+    text-shadow: 0px 0px 80px var(--accent);
+}
+
+.emp {
+    font-weight: 700;
+}

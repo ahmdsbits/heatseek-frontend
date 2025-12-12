@@ -1,0 +1,59 @@
+.dash-grid {
+    display: grid;
+    grid-gap: var(--s-l);
+    justify-items: center;
+    padding: var(--s-2xl);
+}
+
+.dash-grid>* {
+    width: clamp(900px, 1024px, 100%);
+}
+
+.stats-grid {
+    display: grid;
+    grid-gap: var(--s-xs);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.employee-selector {
+    margin-bottom: calc(-1.2 * var(--s-s));
+}
+
+.employee-selector select {
+    width: 100%;
+    padding: var(--s-xs);
+    background-color: var(--bg);
+    color: var(--fg);
+}
+
+.warning-button {
+    --primary-color: var(--cream-yellow);
+    --primary-color-light: var(--light-cream-yellow);
+}
+
+.status-buttons {
+    display: flex;
+    gap: var(--s-xs);
+}
+
+.status-buttons button {
+    flex-grow: 1;
+    width: 100%;
+    min-width: 80px;
+}
+
+.month-picker {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    gap: var(--s-xs);
+}
+
+.month-picker>* {
+    width: 100%;
+    height: 100%;
+}
+
+.month-picker>button {
+    width: 20%;
+}

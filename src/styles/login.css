@@ -1,0 +1,37 @@
+.login-page-grid {
+    width: 100dvw;
+    height: 100dvh;
+    display: grid;
+    grid-gap: var(--s-s);
+    align-content: center;
+    justify-content: center;
+}
+
+.login-page-inputs {
+    display: grid;
+    grid-gap: var(--s-2xs);
+    align-content: center;
+    justify-content: center;
+    grid-template-rows: 1fr 1fr 0.5fr 1fr;
+    grid-template-areas:
+        "a"
+        "b"
+        "."
+        "c";
+}
+
+.login-page-inputs input[type="email"] {
+    grid-area: a;
+}
+
+.login-page-inputs input[type="password"] {
+    grid-area: b;
+}
+
+.login-page-inputs button {
+    grid-area: c;
+}
+
+.login-page-inputs>* {
+    width: clamp(256px, 90dvw, 400px);
+}

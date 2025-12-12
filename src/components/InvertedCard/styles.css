@@ -1,0 +1,36 @@
+.inverted-card-box {
+    padding: var(--s-l);
+    border: none;
+    box-shadow:
+        inset 0 0 0 0 var(--bg),
+        inset -2px 0 0 0 var(--bg),
+        inset 0 0 0 0 var(--bg),
+        inset 0 -2px 0 0 var(--bg),
+        4px 4px 100px -40px var(--fg),
+        4px 4px 0 -1.8px var(--fg);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: var(--fg);
+    color: var(--bg);
+    transition: box-shadow 500ms var(--ease-in-out);
+    width: 100%;
+    min-width: fit-content;
+    height: 100%;
+}
+
+.inverted-card-box:hover {
+    box-shadow:
+        inset 0 0 0 0 var(--bg),
+        inset -2px 0 0 0 var(--bg),
+        inset 0 0 0 0 var(--bg),
+        inset 0 -2px 0 0 var(--bg),
+        4px 4px 80px -24px var(--fg),
+        4px 4px 0 -1.8px var(--fg),
+        4px 4px 20px -10px var(--fg);
+}
+
+.inverted-card-header {
+    margin-top: 0;
+    margin-bottom: var(--s-2xs);
+}

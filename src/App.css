@@ -1,0 +1,13 @@
+.App {
+    display: flex;
+    background-color: var(--bg);
+    color: var(--fg);
+}
+
+.main-content {
+    flex-grow: 1;
+    left: 18dvw;
+    position: absolute;
+    padding: var(--s-l);
+    width: 82dvw;
+}
