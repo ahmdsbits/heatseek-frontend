@@ -16,7 +16,7 @@ function Dash() {
   const fetchEmployees = async () => {
     if (token && employee?.employee_type === "PRIVILEGED") {
       try {
-        const response = await fetch("http://localhost:8000/api/employees/", {
+        const response = await fetch("https://heatseek-api.onrender.com/api/employees/", {
           headers: {
             Authorization: `Token ${token}`,
           },
@@ -38,9 +38,9 @@ function Dash() {
       try {
         setLoading(true);
         let date = month || (new Date().toISOString().slice(0, 7));
-        let url = `http://localhost:8000/api/attendances/${date}/`;
+        let url = `https://heatseek-api.onrender.com/api/attendances/${date}/`;
         if (employee?.employee_type === "PRIVILEGED" && targetEmployeeId) {
-          url = `http://localhost:8000/api/attendances/${date}/${targetEmployeeId}/`;
+          url = `https://heatseek-api.onrender.com/api/attendances/${date}/${targetEmployeeId}/`;
         }
         const response = await fetch(url, {
           headers: {
@@ -83,7 +83,7 @@ function Dash() {
     if (record.status === "ABSENT") {
       try {
         const response = await fetch(
-          `http://localhost:8000/api/attendances/`,
+          `https://heatseek-api.onrender.com/api/attendances/`,
           {
             method: "POST",
             headers: {
@@ -105,7 +105,7 @@ function Dash() {
     if (newStatus === "ABSENT") { // Delete
       try {
         const response = await fetch(
-          `http://localhost:8000/api/attendances/${record.date}/${targetEmployeeId}/`,
+          `https://heatseek-api.onrender.com/api/attendances/${record.date}/${targetEmployeeId}/`,
           {
             method: "DELETE",
             headers: {
@@ -123,7 +123,7 @@ function Dash() {
     } else { // Update
       try {
         const response = await fetch(
-          `http://localhost:8000/api/attendances/${record.date}/${targetEmployeeId}/`,
+          `https://heatseek-api.onrender.com/api/attendances/${record.date}/${targetEmployeeId}/`,
           {
             method: "PATCH",
             headers: {

@@ -20,9 +20,9 @@ function LeaveRequests() {
     if (token && employee) {
       try {
         setLoading(true);
-        let url = `http://localhost:8000/api/leave-requests/?ordering=-date`;
+        let url = `https://heatseek-api.onrender.com/api/leave-requests/?ordering=-date`;
         if (employee.employee_type !== "PRIVILEGED") {
-          url = `http://localhost:8000/api/leave-requests/?employee_id=${employee.employee_id}&ordering=-date`;
+          url = `https://heatseek-api.onrender.com/api/leave-requests/?employee_id=${employee.employee_id}&ordering=-date`;
         }
         const response = await fetch(url, {
           headers: {
@@ -51,7 +51,7 @@ function LeaveRequests() {
     setError(null);
 
     try {
-      const response = await fetch("http://localhost:8000/api/leave-requests/", {
+      const response = await fetch("https://heatseek-api.onrender.com/api/leave-requests/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -104,7 +104,7 @@ function LeaveRequests() {
   const handleApprove = async (uuid, response_message) => {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/leave-requests/${uuid}/approve/`,
+        `https://heatseek-api.onrender.com/api/leave-requests/${uuid}/approve/`,
         {
           method: "POST",
           headers: {
@@ -133,7 +133,7 @@ function LeaveRequests() {
   const handleDeny = async (uuid, response_message) => {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/leave-requests/${uuid}/deny/`,
+        `https://heatseek-api.onrender.com/api/leave-requests/${uuid}/deny/`,
         {
           method: "POST",
           headers: {

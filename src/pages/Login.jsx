@@ -24,7 +24,7 @@ function LoginPage() {
     setError(null);
 
     try {
-      const response = await fetch("http://localhost:8000/api/login/", {
+      const response = await fetch("https://heatseek-api.onrender.com/api/login/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,7 +40,7 @@ function LoginPage() {
         throw new Error(data.message || "Login failed");
       }
 
-      const employeeResponse = await fetch(`http://localhost:8000/api/employees/${data.employee_id}/`, {
+      const employeeResponse = await fetch(`https://heatseek-api.onrender.com/api/employees/${data.employee_id}/`, {
         method: "GET",
         headers: {
           "Accept": "application/json",
